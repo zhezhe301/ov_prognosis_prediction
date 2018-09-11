@@ -2,12 +2,12 @@
 
 ## TCGA (GDC) data collection
 setwd('/data1/users/luym/project/ov_prediction/data')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- as.data.frame(core)
 
 setwd('/data1/users/luym/project/ov_prediction/data')
-RNAseqall <- read.csv('ov_RNASeq_summary2.csv',row.names = 1)
+RNAseqall <- read.csv('tcga.RNAseq.csv',row.names = 1)
 RNAseq <- RNAseqall[which(rownames(RNAseqall)%in%rownames(core)),]
 vital_status <- core[rownames(RNAseq),3]
 days <- core[rownames(RNAseq),4]

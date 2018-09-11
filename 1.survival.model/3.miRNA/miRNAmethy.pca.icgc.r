@@ -2,12 +2,12 @@
 
 ## TCGA (GDC) data collection
 setwd('/data1/users/luym/project/ov_prediction/data')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- as.data.frame(core)
 
 setwd('/data1/users/luym/project/ov_prediction/data')
-miRNAseqall <- read.csv('ov_miRNASeq_summary2.csv',row.names = 1)
+miRNAseqall <- read.csv('tcga.miRNAseq.csv',row.names = 1)
 miRNAseq <- miRNAseqall[which(rownames(miRNAseqall)%in%rownames(core)),]
 vital_status <- core[rownames(miRNAseq),3]
 days <- core[rownames(miRNAseq),4]
@@ -46,8 +46,8 @@ for (i in 1:length(colnames(table3))) {
 
 ## ICGC data collection
 setwd('/data1/users/luym/project/ov_prediction/data')
-testset <- read.table('miRNAseq.txt',sep = '\t',quote='',header = TRUE,row.names = 1)
-surv.info <- read.table('donor.OV-AU.txt',header=T,sep='\t',row.names = 1)
+testset <- read.table('icgc.miRNAseq.txt',sep = '\t',quote='',header = TRUE,row.names = 1)
+surv.info <- read.table('icgc.patient.txt',header=T,sep='\t',row.names = 1)
 surv.info <- as.data.frame(surv.info)
 vital_status <- surv.info[rownames(testset),1]
 days <- surv.info[rownames(testset),6]

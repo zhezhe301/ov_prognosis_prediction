@@ -5,14 +5,13 @@ setwd('/data1/users/luym/project/ov_prediction/data')
 total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- as.data.frame(core)
-
 setwd('/data1/users/luym/project/ov_prediction/data')
-miRNAseqall <- read.csv('tcga.miRNAseq.csv',row.names = 1)
-miRNAseq <- miRNAseqall[which(rownames(miRNAseqall)%in%rownames(core)),]
-vital_status <- core[rownames(miRNAseq),3]
-days <- core[rownames(miRNAseq),4]
-##### 1==alive, 2==dead #####
-table <- cbind(days, vital_status, miRNAseq)
+DNAseqall <- read.table('tcga.DNAseq.txt',header=T, sep='\t',quote='',row.names=1)
+DNAseq <- DNAseqall[which(rownames(DNAseqall)%in%rownames(core)),]
+vital_status <- core[rownames(DNAseq),3]
+days <- core[rownames(DNAseq),4]##### 1==alive, 2==dead #####
+table <- cbind(days, vital_status, DNAseq)
+table <- table[,-(which(is.na(table[1,])==TRUE))]
 
 ## Cox proportional hazards regression identifying the most significant features
 library("survival")
@@ -20,29 +19,27 @@ attach(table)
 table$days <- as.numeric(table$days)
 table[,2] <- as.numeric(table[,2])
 list1 <- c()
-for (i in colnames(table)[3:1870]) {
+for (i in colnames(table)[3:12363]) {
   z <- Surv(table$days,table$vital_status==2)
   y <- coxph(z~table[,i])
   y.s <- summary(y)
   list1 <- append(list1,y.s$logtest['pvalue'])
 }
-names(list1) <- colnames(table)[3:1870]
-list2 <- sort(list1)[1:163] ####p<0.05
-## events :300
-list3 <- sort(list1)[1:163]
-setwd('/data1/users/luym/project/ov_prediction/result/3.miRNAseq')
-write.table(list3,'coxmiRNAseq.txt',sep='\t')
+names(list1) <- colnames(table)[3:12363]
+list2 <- sort(list1)[1:892] ####p<0.05, events :266
+list3 <- sort(list1)[(1+22):(266+22)]
 
-setwd('/data1/users/luym/project/ov_prediction/result/3.miRNAseq')
-list3 <-   read.table('coxmiRNAseq.txt',sep = '\t')
+setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq')
+write.table(list3,'coxDNAseq.txt',sep='\t')
+setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq')
+list3 <- read.table('coxDNAseq.txt',sep = '\t')
 table2 <- table[,rownames(list3)]
 table2 <- cbind(table[,c(1,2)],table2)
 table3 <- table2
 for (i in 1:length(colnames(table3))) {
-  table3[which(is.na(table3[,i])==TRUE),i] <- median(table3[,i],na.rm=T)
+  table3[which(is.na(table3[,i])==TRUE),i] <- median(table3[,i],na.rm=TRUE)
 }
 
-table3[3:length(colnames(table3))] <- log(table3[3:length(colnames(table3))]+1)
 #### Step2 Model Training and Predictions
 
 ### five-fold cross validation without PCA 
@@ -60,7 +57,7 @@ for (i in 1:20) {
     fold <- which(folds == k)
     data.train <- table3[-fold,]
     data.test <- table3[fold,]
-    setwd('/data1/users/luym/project/ov_prediction/result/3.miRNA')
+    setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq')
     write.csv(data.train,'trainset.5fold.csv')
     write.csv(data.test,'testset.5fold.csv')
     
@@ -92,9 +89,6 @@ for (i in 1:20) {
     rcorr.cens(predictval, Surv(data.test$days,data.test$vital_status))["C Index"]
     cindex <- 1-rcorr.cens(predict(coxph.model,newdata=data.test[,selectedXname],type="risk"), Surv(data.test$days,data.test$vital_status))["C Index"]
     mat.100[5*(i-1)+k,1] <- cindex
-    ###
-    
-    
     trainset.aftercox <- data.train
     testset.aftercox <- data.test
     trainset.aftercox$vital_status <- trainset.aftercox$vital_status-1
@@ -111,6 +105,7 @@ for (i in 1:20) {
 }
 colnames(mat.100) <- c('lasso','rf.surv')
 write.csv(mat.100, 'mat.100.5fold.csv')
+
 ## random forest * 100 times
 library("glmnet")
 library(Hmisc) 
@@ -124,9 +119,9 @@ for (i in 1:20) {
     fold <- which(folds == k)
     data.train <- table3[-fold,]
     data.test <- table3[fold,]
-    setwd('/data1/users/luym/project/ov_prediction/result/3.miRNAseq')
-    write.csv(data.train,'trainset.pca.5fold.csv')
-    write.csv(data.test,'testset.pca.5fold.csv')
+    setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq')
+    write.csv(data.train,'trainset.5fold.csv')
+    write.csv(data.test,'testset.5fold.csv')
     
     x <- as.matrix(data.train[,-c(1,2)])
     y <- as.matrix(data.train[,c(1,2)])
@@ -180,14 +175,5 @@ for (i in 1:20) {
 }
 colnames(mat.100) <- c('lasso','rf.surv')
 write.csv(mat.100, 'mat.100.5fold.csv')
-
-
-
-
-
-
-
-
-
 
 

@@ -2,12 +2,12 @@
 
 ## TCGA (GDC) data collection
 setwd('/data1/users/luym/project/ov_prediction/data')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- as.data.frame(core)
 
 setwd('/data1/users/luym/project/ov_prediction/data')
-DNAmethall <- read.table('ovDNAmethylation_summary_3.txt',header=T, sep='\t',quote='',row.names=1)
+DNAmethall <- read.table('tgca.DNAmethylation.txt',header=T, sep='\t',quote='',row.names=1)
 DNAmeth <- DNAmethall[which(rownames(DNAmethall)%in%rownames(core)),]
 vital_status <- core[rownames(DNAmeth),3]
 days <- core[rownames(DNAmeth),4]

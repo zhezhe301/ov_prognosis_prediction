@@ -2,12 +2,12 @@
 
 ## TCGA (GDC) data collection
 setwd('/data1/users/luym/project/ov_prediction/data')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- as.data.frame(core)
 
 setwd('/data1/users/luym/project/ov_prediction/data')
-miRNAseqall <- read.csv('ov_miRNASeq_summary2.csv',row.names = 1)
+miRNAseqall <- read.csv('tcga.miRNAseq.csv',row.names = 1)
 miRNAseq <- miRNAseqall[which(rownames(miRNAseqall)%in%rownames(core)),]
 vital_status <- core[rownames(miRNAseq),3]
 days <- core[rownames(miRNAseq),4]
