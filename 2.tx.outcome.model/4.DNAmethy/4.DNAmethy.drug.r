@@ -4,7 +4,7 @@
 # patients info. The 23rd column was the treatment outcome represented by 1 and 2 
 # where 1 means sensensitive and 2 means resistant 
 setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- core[complete.cases(core[,21]),]
 core <- core[complete.cases(core[,22]),]
@@ -12,14 +12,14 @@ core <- as.data.frame(core)
 
 # The file 'DNAmethy_pvalue.csv' was the Fisher test for pre-selection molecular features 
 setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-# total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+# total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 # core <- total
 # core <- core[complete.cases(core[,21]),]
 # core <- core[complete.cases(core[,22]),]
 # core <- as.data.frame(core)
 
 # setwd('~/Project/ov_prognosis_drugprecision/result/')
-# DNAmethall <- read.table('ovDNAmethylation_summary_3.txt',header=T, sep='\t',quote='',row.names=1)
+# DNAmethall <- read.table('tgca.DNAmethylation.txt',header=T, sep='\t',quote='',row.names=1)
 # DNAmethy <- DNAmethall[which(rownames(DNAmethall)%in%rownames(core)),]
 
 
@@ -54,7 +54,7 @@ list3 <- list2[1:808]  # <0.05, event :344
 list3 <- list3[1:344]
 # TCGA data
 setwd('~/Project/ov_prognosis_drugprecision/result/')
-DNAmethall <- read.table('ovDNAmethylation_summary_3.txt',header=T, sep='\t',quote='',row.names=1)
+DNAmethall <- read.table('tgca.DNAmethylation.txt',header=T, sep='\t',quote='',row.names=1)
 DNAmethy <- DNAmethall[which(rownames(DNAmethall)%in%rownames(core)),intersect(names(list3),colnames(DNAmethall))]
 txoutcome <- core[rownames(DNAmethy),23]
 table <- cbind(txoutcome, DNAmethy)

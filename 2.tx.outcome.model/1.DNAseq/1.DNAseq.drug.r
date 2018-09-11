@@ -4,7 +4,7 @@
 # patients info. The 23rd column was the treatment outcome represented by 1 and 2 
 # where 1 means sensensitive and 2 means resistant 
 setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- core[complete.cases(core[,21]),]
 core <- core[complete.cases(core[,22]),]
@@ -67,7 +67,7 @@ list3 <- list2[1:43]  # p<0.05, event :266
 
 # TCGA data
 setwd('~/Project/ov_prognosis_drugprecision/result/')
-DNAseqall <- read.table('ov_DNASeq_summ2.txt',header=T, sep='\t',quote='',row.names=1)
+DNAseqall <- read.table('tcga.DNAseq.txt',header=T, sep='\t',quote='',row.names=1)
 DNAseq <- DNAseqall[which(rownames(DNAseqall)%in%rownames(core)),intersect(names(list3),colnames(DNAseqall))]
 txoutcome <- core[rownames(DNAseq),23]
 table <- cbind(txoutcome, DNAseq)

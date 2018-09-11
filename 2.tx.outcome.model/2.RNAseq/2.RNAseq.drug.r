@@ -4,7 +4,7 @@
 # patients info. The 23rd column was the treatment outcome represented by 1 and 2 
 # where 1 means sensensitive and 2 means resistant 
 setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- core[complete.cases(core[,21]),]
 core <- core[complete.cases(core[,22]),]
@@ -12,13 +12,13 @@ core <- as.data.frame(core)
 
 # The file 'RNASeq_pvalue.csv' was the Fisher test for pre-selection molecular features 
 # setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-# total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+# total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 # core <- total
 # core <- core[complete.cases(core[,21]),]
 # core <- core[complete.cases(core[,22]),]
 # core <- as.data.frame(core)
 # setwd('~/Project/ov_prognosis_drugprecision/result/')
-# RNAseqall <- read.csv('ov_RNASeq_summary2.csv',row.names = 1)
+# RNAseqall <- read.csv('tcga.RNAseq.csv',row.names = 1)
 # RNAseq <- RNAseqall[which(rownames(RNAseqall)%in%rownames(core)),]
 # 
 # txoutcome <- core[rownames(RNAseq),23]
@@ -42,7 +42,7 @@ list3 <- list2[1:1282]  #<0.05, event :184
 list3 <- list3[1:184]
 # TCGA data
 setwd('~/Project/ov_prognosis_drugprecision/result/')
-RNAseqall <- read.csv('ov_RNASeq_summary2.csv',row.names = 1)
+RNAseqall <- read.csv('tcga.RNAseq.csv',row.names = 1)
 RNAseq <- RNAseqall[which(rownames(RNAseqall)%in%rownames(core)), intersect(names(list3),colnames(RNAseqall))]
 txoutcome <- core[rownames(RNAseq),23]
 table <- cbind(txoutcome, RNAseq)

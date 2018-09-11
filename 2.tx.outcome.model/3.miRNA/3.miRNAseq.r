@@ -4,7 +4,7 @@
 # patients info. The 23rd column was the treatment outcome represented by 1 and 2 
 # where 1 means sensensitive and 2 means resistant 
 setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 core <- total
 core <- core[complete.cases(core[,21]),]
 core <- core[complete.cases(core[,22]),]
@@ -12,13 +12,13 @@ core <- as.data.frame(core)
 
 # The file 'miRNASeq_pvalue.csv' was the Fisher test for pre-selection molecular features 
 # setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
-# total <- read.table('totalpatient.txt',sep='\t',header=T,row.names=1) # 587 person
+# total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
 # core <- total
 # core <- core[complete.cases(core[,21]),]
 # core <- core[complete.cases(core[,22]),]
 # core <- as.data.frame(core)
 # setwd('~/Project/ov_prognosis_drugprecision/result/')
-# miRNAseqall <- read.csv('ov_miRNASeq_summary2.csv',row.names = 1)
+# miRNAseqall <- read.csv('tcga.miRNAseq.csv',row.names = 1)
 # miRNAseq <- miRNAseqall[which(rownames(miRNAseqall)%in%rownames(core)),]
 # txoutcome <- core[rownames(miRNAseq),23]
 # table <- cbind(txoutcome, miRNAseq)
@@ -41,7 +41,7 @@ list3 <- list2[1:123]  # <0.05, event :300
 
 # TCGA data
 setwd('~/Project/ov_prognosis_drugprecision/result/')
-miRNAseqall <- read.csv('ov_miRNASeq_summary2.csv',row.names = 1)
+miRNAseqall <- read.csv('tcga.miRNAseq.csv',row.names = 1)
 miRNAseq <- miRNAseqall[which(rownames(miRNAseqall)%in%rownames(core)),intersect(names(list3),colnames(miRNAseqall))]
 txoutcome <- core[rownames(miRNAseq),23]
 table <- cbind(txoutcome, miRNAseq)
