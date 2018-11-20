@@ -37,7 +37,7 @@ Step3. Back to run R script *1.DNAseq.drug.r* for C-index calculation and save t
 
 ## 3. Part3 pathway
 
-This is pathway analyses. There is a single file written by R. Before this part, make sure you have the following files: *panther.slim.go.ids.txt*, *coxRNAseq.txt*, *RNASeq_pvalue.csv*, *coxDNAseq.txt*, *DNAseq.pvalue.csv*, *coxDNAmethy.txt*, *DNAmethy_pvalue.csv*
+This is pathway analyses. There is a single file written by R. Before this part, make sure you have the following files: *panther.slim.go.ids.txt*, *coxRNAseq.txt*, *RNASeq_pvalue.csv*, *coxDNAseq.txt*, *DNAseq.pvalue.csv*, *coxDNAmethy.txt*, and *DNAmethy_pvalue.csv*
 
 ## 4. Part4 plot
 
@@ -45,11 +45,11 @@ This part provided figure2-figure6 plotting code
 
 ### 4.1 
 
-The R script *figure2.r* is for figure2. Before this, make sure you have the following files: *tcga.patient.txt*, *tcga.RNAseq.csv*, *icgc.RNAseq.csv*, *icgc.patient.txt*, *tgca.DNAmethylation.txt*, *icgc.DNAmethylation.txt*
+The R script *figure2.r* is for figure2. Before this, make sure you have the following files: *tcga.patient.txt*, *tcga.RNAseq.csv*, *icgc.RNAseq.csv*, *icgc.patient.txt*, *tgca.DNAmethylation.txt*, and *icgc.DNAmethylation.txt*
 
 ### 4.2 
 
-The R script *figure3.r* is for figure3 which shows C-index of all the models. Before this step, you need first run all the scripts from part1 (*1.survival.model*) and part2 (*2.tx.outcome.model*) to create related files. Next, bind them together to create the following files: *survival.5fold.txt*, *survival.icgc.txt*, *treatment.5fold.txt*. You can bind them manually by yourself. However, we have already uploaded this three files.
+The R script *figure3.r* is for figure3 which shows C-index of all the models. Before this step, you need first run all the scripts from part1 (*1.survival.model*) and part2 (*2.tx.outcome.model*) to create related files. Next, bind them together to create the following files: *survival.5fold.txt*, *survival.icgc.txt*, and *treatment.5fold.txt*. You can bind them manually by yourself. However, we have already uploaded this three files.
 In detail,
 
 4.2.1 The file *survival.5fold.txt* is used for figure 3A plotting. After running the scripts from part1 (*1.survival.model*), you will have four files named "mat.100.5fold.csv" and other four files named "mat.100.pca.5fold.csv" (from *1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), bind them together to generate the file *survival.5fold.txt*.
@@ -60,7 +60,7 @@ In detail,
 
 ### 4.3 
 
-The R script *figure4.r* is to plot figure4. Before this, make sure you have the following files: *tcga.patient.txt*, *tcga.RNAseq.csv*, *RNASeq_pvalue.csv*, *icgc.RNAseq.csv*, *icgc.patient.txt*
+The R script *figure4.r* is to plot figure4. Before this, make sure you have the following files: *tcga.patient.txt*, *tcga.RNAseq.csv*, *RNASeq_pvalue.csv*, *icgc.RNAseq.csv*, and *icgc.patient.txt*
 
 ### 4.4 
 
@@ -69,7 +69,7 @@ The R script *figure5.r* is for figure5. Just run it.
 ### 4.5 
 
 The directory *figure6* including scripts and data for generating figure6 circos plot.
-The circos plot have tutorials on http://circos.ca/documentation/tutorials/. Before the figure6 plot, we recommend you have read the tutorials and installed circos. For figure6A-F, just run corresponding script named *circos.pathway.conf* 
+The circos plot have tutorials on http://circos.ca/documentation/tutorials/. Before the figure6 plot, we recommend you have read the tutorials and installed circos. For UNIX users, just run corresponding script named *circos.pathway.conf* (for Windows users, see in their tutorials)
 
 ```
 ../bin/circos -conf figure6/figure6E.dnamethy.sv.config/circos.pathway.conf 
