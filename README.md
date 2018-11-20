@@ -115,7 +115,7 @@ for (i in 1:20) {
     } else {
       mat.100[5*(i-1)+k,1] <- 1-cindex
     }    
-# random forest * 100 times    
+    # random forest * 100 times    
     trainset.aftercox <- data.train
     for (j in 1:length(colnames(trainset.aftercox))) {
       trainset.aftercox[which(is.na(trainset.aftercox[,j])==TRUE),j] <- min(trainset.aftercox[,j],na.rm=TRUE)
@@ -187,12 +187,10 @@ for (k in 1:nrFolds) {
   write.csv(data.train,paste('classifier.trainset.5fold',k,'.csv',sep=''))
   write.csv(data.test,paste('classifier.testset.5fold',k,'.csv',sep=''))
 }
-## PCT (or PCA method)to further reduce the dimensions of the data (file name of code: DNAseq.pca.5fold.py)
+# PCT (or PCA method)to further reduce the dimensions of the data (file name of code: DNAseq.pca.5fold.py)
 table1 <- table[,-1]
 table1 <- as.matrix(table1)
 pca <- princomp(table1,cor = TRUE)
-#summary(pca)
-## 1-22:80%, 1-26:85%, 1-29:90%, 1-33 :95%
 pca.table <- table1 %*% pca$loadings[,1:40]
 pca.table <- cbind(txoutcome, pca.table)
 # save the files for next step in Python 
@@ -343,7 +341,7 @@ for (k in 1:100) {
   cindex.dnnclass <- rcorr.cens(dnnclass[,2], dnnclass[,1])["C Index"] 
   mat[k,6] <- cindex.dnnclass  
 }
-colnames(mat) <- c('dt.outcome.5fold','rf.outcome.5fold','dnnclass.outcome.5fold','dt.outcome.pca.5fold','rf.outcome.pca.5fold','dnnclass.outcome.pca.5fold')
+colnames(mat) <-c('dt.outcome.5fold','rf.outcome.5fold','dnnclass.outcome.5fold','dt.outcome.pca.5fold','rf.outcome.pca.5fold','dnnclass.outcome.pca.5fold')
 setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq')
 write.csv(mat, 'mat.100python.txoutcome.csv')
 ```
