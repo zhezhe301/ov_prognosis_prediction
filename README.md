@@ -19,17 +19,17 @@ Make sure you have downloaded the following files: *tcga.patient.txt*, *tcga.DNA
 
 Step1. Data collection and feature pre-selection
 
-```
+``` {r}
 # TCGA (GDC) data collection
 setwd('/data1/users/luym/project/ov_prediction/data')
-total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) 
 core <- total
 core <- as.data.frame(core)
 setwd('/data1/users/luym/project/ov_prediction/data')
 DNAseqall <- read.table('tcga.DNAseq.txt',header=T, sep='\t',quote='',row.names=1)
 DNAseq <- DNAseqall[which(rownames(DNAseqall)%in%rownames(core)),]
 vital_status <- core[rownames(DNAseq),3]
-days <- core[rownames(DNAseq),4]##### 1==alive, 2==dead #####
+days <- core[rownames(DNAseq),4]
 table <- cbind(days, vital_status, DNAseq)
 table <- table[,-(which(is.na(table[1,])==TRUE))]
 # Cox proportional hazards regression identifying the most significant features
@@ -45,7 +45,7 @@ for (i in colnames(table)[3:12363]) {
   list1 <- append(list1,y.s$logtest['pvalue'])
 }
 names(list1) <- colnames(table)[3:12363]
-list2 <- sort(list1)[1:892] ####p<0.05, events :266
+list2 <- sort(list1)[1:892] 
 list3 <- sort(list1)[(1+22):(266+22)]
 setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq')
 write.table(list3,'coxDNAseq.txt',sep='\t')
@@ -61,7 +61,7 @@ for (i in 1:length(colnames(table3))) {
 
 Step2. Model Training and Predictions
 
-```
+```{r}
 # five-fold cross validation without PCA 
 # LASSO and Cox * 100 times
 library("glmnet")
@@ -70,19 +70,15 @@ library(randomForestSRC)
 mat.100 <- matrix(nrow= 100, ncol=2)
 for (i in 1:20) {
   nrFolds <- 5
-  folds <- sample(rep_len(1:nrFolds, nrow(table3)))
-  
+  folds <- sample(rep_len(1:nrFolds, nrow(table3))) 
   for (k in 1:nrFolds) {
     repeat{
       fold <- which(folds == k)
       data.train <- table3[-fold,]
       data.test <- table3[fold,]
-      # setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq')
-      setwd('/Users//zhangzhe/Project/ov_prognosis_drugprecision/result/repeat/1.DNAseq')
-      
+      setwd('/data1/users/luym/project/ov_prediction/result/1.DNAseq') 
       write.csv(data.train,'trainset.5fold.csv')
-      write.csv(data.test,'testset.5fold.csv')
-      
+      write.csv(data.test,'testset.5fold.csv')      
       x <- as.matrix(data.train[,-c(1,2)])
       y <- as.matrix(data.train[,c(1,2)])
       y[which(y[,2]==1),] <- 0
@@ -146,7 +142,7 @@ colnames(mat.100) <- c('lasso','rf.surv')
 
 Step3. Save the results of calculated C-indexs
 
-```
+```{r}
 write.csv(mat.100, 'mat.100.5fold.csv')
 ```
 
@@ -156,7 +152,7 @@ This part provided prognosis prediction for treatment outcome model. There are f
 
 The steps will be
 
-```
+```{python}
 Step1. Run R script *1.DNAseq.drug.r* for data collection and feature pre-selection. Create related files and save them
 Step2. Run Python scripts *DNAseq.5fold.py* and *DNAseq.pca.5fold.py*. This step will create predicted results and save them
 Step3. Back to run R script *1.DNAseq.drug.r* for C-index calculation and save the results.
