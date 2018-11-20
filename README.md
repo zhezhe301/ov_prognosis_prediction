@@ -5,7 +5,7 @@ Assessing the clinical utility of multi-omics data for predicting serous ovarian
 
 ## Prerequisites
 
-Basically, we use R and Python programming language to write these scripts. Required packages are free to get, and specificly, TensorFlow should follow the instruction on https://www.tensorflow.org/tutorials/
+Basically, we use R and Python programming language to write these scripts. Required packages are free to get, and specificly, TensorFlow should follow the instruction on https://www.tensorflow.org/tutorials/, and circos plot should follow the tutorials on http://circos.ca/documentation/tutorials/ to install them.
 
 ## Getting Started
 
@@ -13,7 +13,7 @@ These instructions will get you how to run on your local machine for development
 
 ## 1. Part1
 
-This part provided prognosis prediction for survival model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*) that are all written by R. In each folder, there are four files of R scripts. *XX.5fold.r* and *XX.pca.5fold.r* are used for creating files for figure3A, while *XX.icgc.r* and *XX.pca.icgc.r* are used for creating files for figure3B. We will take *DNAseq.5fold.r* as an example for step-by-step instruction on running the code
+This part provided prognosis prediction for survival model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), and in each of them, there are four files written by R scripts. *XX.5fold.r* and *XX.pca.5fold.r* are used for creating files for figure3A, while *XX.icgc.r* and *XX.pca.icgc.r* are used for creating files for figure3B. We will take *DNAseq.5fold.r* as an example for step-by-step instruction on running the code
 
 The steps will be
 
@@ -25,7 +25,7 @@ Step3. Save the results of calculated C-indexs
 
 ## 2. Part2
 
-This part provided prognosis prediction for treatment outcome model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*) that are written by R and Python. In each folder, there are three files of R script and Python scripts. The three files are used for creating files for figure3C. We will take *1.DNAseq* as an example for step-by-step instruction on running the code
+This part provided prognosis prediction for treatment outcome model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), and in each of them, there are three files written by R and Python. The three scripts are used for creating files for figure3C. We will take *1.DNAseq* as an example for step-by-step instruction on running the code
 
 The steps will be
 
