@@ -150,12 +150,202 @@ write.csv(mat.100, 'mat.100.5fold.csv')
 
 This part provided prognosis prediction for treatment outcome model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), and in each of them, there are three files written by R and Python. The three scripts are used for creating files for figure3C. We will take *1.DNAseq* as an example for step-by-step instruction on running the code
 
-The steps will be
+Make sure you have downloaded the following files: *tcga.patient.txt*, *DNAseq.pvalue.csv*, and *tcga.DNAseq.txt*; installed following R packages: *Hmisc*; and following python modules: *__future__*, *pandas*, *sklearn*, *tensorflow*, *numpy*, and *matplotlib.pyplot*. Remember change file path on your local machine.
+
+Step1. Run R script *1.DNAseq.drug.r* for data collection and feature pre-selection. Create related files and save them
+
+```{r}
+# Step1 Data Collection and Feature Pre-Selection
+# TCGA (GDC) data collection
+# patients info. The 23rd column was the treatment outcome represented by 1 and 2 
+# where 1 means sensensitive and 2 means resistant 
+setwd('/Users//zhangzhe//Project//ov_prognosis_drugprecision//result//1.')
+total <- read.table('tcga.patient.txt',sep='\t',header=T,row.names=1) # 587 person
+core <- total
+core <- core[complete.cases(core[,21]),]
+core <- core[complete.cases(core[,22]),]
+core <- as.data.frame(core)
+setwd('~/Project/ov_prognosis_drugprecision/result/5.tx.pvalue/')
+list1 <- read.csv('DNAseq.pvalue.csv',row.names = 1)
+list1<- as.matrix(list1)
+list2 <- sort(list1[,11])
+list3 <- list2[1:43] 
+# TCGA data
+setwd('~/Project/ov_prognosis_drugprecision/result/')
+DNAseqall <- read.table('tcga.DNAseq.txt',header=T, sep='\t',quote='',row.names=1)
+DNAseq <- DNAseqall[which(rownames(DNAseqall)%in%rownames(core)),intersect(names(list3),colnames(DNAseqall))]
+txoutcome <- core[rownames(DNAseq),23]
+table <- cbind(txoutcome, DNAseq)
+# save the files for next step in Python 
+nrFolds <- 5
+folds <- sample(rep_len(1:nrFolds, nrow(table)))
+for (k in 1:nrFolds) {
+  fold <- which(folds == k)
+  data.train <- table[-fold,]
+  data.test <- table[fold,]
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/')
+  write.csv(data.train,paste('classifier.trainset.5fold',k,'.csv',sep=''))
+  write.csv(data.test,paste('classifier.testset.5fold',k,'.csv',sep=''))
+}
+## PCT (or PCA method)to further reduce the dimensions of the data (file name of code: DNAseq.pca.5fold.py)
+table1 <- table[,-1]
+table1 <- as.matrix(table1)
+pca <- princomp(table1,cor = TRUE)
+#summary(pca)
+## 1-22:80%, 1-26:85%, 1-29:90%, 1-33 :95%
+pca.table <- table1 %*% pca$loadings[,1:40]
+pca.table <- cbind(txoutcome, pca.table)
+# save the files for next step in Python 
+nrFolds <- 5
+folds <- sample(rep_len(1:nrFolds, nrow(pca.table)))
+for (k in 1:nrFolds) {
+  fold <- which(folds == k)
+  data.train <- pca.table[-fold,]
+  data.test <- pca.table[fold,]
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/')
+  write.csv(data.train,paste('classifier.trainset.pca.5fold',k,'.csv',sep = ''))
+  write.csv(data.test,paste('classifier.testset.pca.5fold',k,'.csv',sep=''))
+}
+```
+
+Step2. Run Python scripts *DNAseq.5fold.py* and *DNAseq.pca.5fold.py*. This step will create predicted results and save them. The following code only shows *DNAseq.5fold.py*.
 
 ```{python}
-Step1. Run R script *1.DNAseq.drug.r* for data collection and feature pre-selection. Create related files and save them
-Step2. Run Python scripts *DNAseq.5fold.py* and *DNAseq.pca.5fold.py*. This step will create predicted results and save them
+# Step2 Model Training and Predictions
+# five-fold cross validation without PCA 
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+import pandas as pd
+import sklearn
+from sklearn import tree, preprocessing, ensemble
+from sklearn.cross_validation import train_test_split 
+from sklearn.metrics import accuracy_score
+import tensorflow as tf
+from tensorflow.contrib import learn
+import numpy as np
+from sklearn import svm
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn import feature_selection
+import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
+from sklearn import datasets, linear_model
+from sklearn import cross_validation
+def main():
+	for k in range(20):
+		for n in range(1,6):
+			# deep learning 
+			def dnnclassifier():
+				tf.logging.set_verbosity(tf.logging.INFO)
+			 	traindata = pd.read_csv("~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/classifier.trainset.5fold" + str(n) +".csv")
+			 	y_train = traindata['txoutcome']
+			 	X_train = traindata[list(range(2,len(traindata.columns)))]
+			 	testdata = pd.read_csv("~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/classifier.testset.5fold" + str(n) +".csv")
+			 	y_test = testdata['txoutcome']	
+			 	X_test = testdata[list(range(2,len(traindata.columns)))]
+			 	feature_columns=learn.infer_real_valued_columns_from_input(X_train)
+			 	dnn_classifier = learn.DNNClassifier(hidden_units=[20, 40, 20], n_classes=5,feature_columns=feature_columns)
+			 	dnn_classifier.fit(X_train, y_train, steps = 2000)
+			 	dnn_prediction = dnn_classifier.predict(X_test)
+			 	print('DNN Prediction Score: {0}'.format( accuracy_score(dnn_prediction, y_test)))
+			 	print(len(dnn_prediction))
+			 	print(len(y_test))
+			 	print(dnn_prediction[4])
+			 	print(y_test[4])
+			 	# save the predicted value for the next step of C-index calculation by R
+			 	fout = open("/Users/Zhangzhe/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/dnn_classifier/dnn_classifier.txoutcome.5fold"+str(5*k+n)+".txt","w")
+			 	for j in range(len(dnn_prediction)):
+			 		fout.write(str(y_test[j])+'\t' + str(dnn_prediction[j])+'\n')
+			dnnclassifier()
+			print(k)
+      # Decision Tree
+			def treeclassifier():
+				tf.logging.set_verbosity(tf.logging.INFO)
+				traindata = pd.read_csv("~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/classifier.trainset.5fold" + str(n) +".csv")
+				y_train = traindata['txoutcome']
+				X_train = traindata[list(range(2,len(traindata.columns)))]
+				testdata = pd.read_csv("~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/classifier.testset.5fold" + str(n) +".csv")
+				y_test = testdata['txoutcome']	
+				X_test = testdata[list(range(2,len(traindata.columns)))]
+				dt_classifier = tree.DecisionTreeClassifier(max_depth=3) 
+				dt_classifier.fit(X_train, y_train)
+				dt_prediction = dt_classifier.predict(X_test)
+				print (dt_prediction)
+				print(y_test)
+			 	# save the predicted value for the next step of C-index calculation by R				
+				fout = open("/Users/Zhangzhe/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/dt_classifier/dt_classifier.txoutcome.5fold"+str(5*k+n)+".txt","w")
+				for j in range(len(dt_prediction)):
+					fout.write(str(y_test[j]) + '\t' + str(dt_prediction[j]) +'\n')
+			treeclassifier()	
+			# Random Forest
+			def rfclassifier():
+				tf.logging.set_verbosity(tf.logging.INFO)
+				traindata = pd.read_csv("~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/classifier.trainset.5fold" + str(n) +".csv")
+				y_train = traindata['txoutcome']
+				X_train = traindata[list(range(2,len(traindata.columns)))]
+				testdata = pd.read_csv("~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/classifier.testset.5fold" + str(n) +".csv")
+				y_test = testdata['txoutcome']	
+				X_test = testdata[list(range(2,len(traindata.columns)))]
+				rf_classifier = ensemble.RandomForestClassifier(n_estimators=40)
+				rf_classifier.fit(X_train, y_train)
+				rf_prediction = rf_classifier.predict(X_test)
+			 	# save the predicted value for the next step of C-index calculation by R
+				fout = open("/Users/Zhangzhe/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/rf_classifier/rf_classifier.txoutcome.5fold"+str(5*k+n)+".txt","w")
+				for j in range(len(rf_prediction)):
+					fout.write(str(y_test[j]) + '\t'+str(rf_prediction[j]) +'\n')
+			rfclassifier()
+main()
+```
+
 Step3. Back to run R script *1.DNAseq.drug.r* for C-index calculation and save the results.
+
+```
+# the C-index calculation
+library(Hmisc) 
+mat <- matrix(nrow= 100, ncol= 6)
+for (k in 1:100) {
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/dt_classifier/')
+  f <- paste('dt_classifier.txoutcome.5fold', k, '.txt', sep="")
+  treeclass <- read.table(f,header=F)
+  colnames(treeclass) <- c('actual','pred')
+  cindex.dt <- rcorr.cens(treeclass[,2], treeclass[,1])["C Index"]
+  mat[k,1] <- cindex.dt  
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/rf_classifier/')
+  f <- paste('rf_classifier.txoutcome.5fold', k, '.txt', sep="")
+  rfclass <- read.table(f,header=F)
+  colnames(rfclass) <- c('actual','pred')
+  cindex.rf <- rcorr.cens(rfclass[,2], rfclass[,1])["C Index"] 
+  mat[k,2] <- cindex.rf 
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/dnn_classifier/')
+  f <- paste('dnn_classifier.txoutcome.5fold', k, '.txt', sep="")
+  dnnclass <- read.table(f,header=F)
+  colnames(dnnclass) <- c('actual','pred')  
+  cindex.dnnclass <- rcorr.cens(dnnclass[,2], dnnclass[,1])["C Index"] 
+  mat[k,3] <- cindex.dnnclass 
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/dt_classifier/')
+  f <- paste('dt_classifier.txoutcome.pca.5fold', k, '.txt', sep="")
+  treeclass <- read.table(f,header=F)
+  colnames(treeclass) <- c('actual','pred')
+  cindex.dt <- rcorr.cens(treeclass[,2], treeclass[,1])["C Index"]
+  mat[k,4] <- cindex.dt 
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/rf_classifier/')
+  f <- paste('rf_classifier.txoutcome.pca.5fold', k, '.txt', sep="")
+  rfclass <- read.table(f,header=F)
+  colnames(rfclass) <- c('actual','pred')
+  cindex.rf <- rcorr.cens(rfclass[,2], rfclass[,1])["C Index"] 
+  mat[k,5] <- cindex.rf 
+  setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq/dnn_classifier/')
+  f <- paste('dnn_classifier.txoutcome.pca.5fold', k, '.txt', sep="")
+  dnnclass <- read.table(f,header=F)
+  colnames(dnnclass) <- c('actual','pred')  
+  cindex.dnnclass <- rcorr.cens(dnnclass[,2], dnnclass[,1])["C Index"] 
+  mat[k,6] <- cindex.dnnclass  
+}
+colnames(mat) <- c('dt.outcome.5fold','rf.outcome.5fold','dnnclass.outcome.5fold','dt.outcome.pca.5fold','rf.outcome.pca.5fold','dnnclass.outcome.pca.5fold')
+setwd('~/Project/ov_prognosis_drugprecision/result/4.prediction/1.DNAseq')
+write.csv(mat, 'mat.100python.txoutcome.csv')
 ```
 
 ## 3. Part3 pathway
