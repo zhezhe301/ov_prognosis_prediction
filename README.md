@@ -11,7 +11,7 @@ Basically, we use R and Python programming language to write these scripts. Requ
 
 These instructions will get you how to run on your local machine for development and testing purposes. There are four parts of our codes.
 
-## 1. Part1
+## 1. Part1 survival.model
 
 This part provided prognosis prediction for survival model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), and in each of them, there are four files written by R scripts. *XX.5fold.r* and *XX.pca.5fold.r* are used for creating files for figure3A, while *XX.icgc.r* and *XX.pca.icgc.r* are used for creating files for figure3B. We will take *DNAseq.5fold.r* as an example for step-by-step instruction on running the code
 
@@ -23,7 +23,7 @@ Step2. Model Training and Predictions
 Step3. Save the results of calculated C-indexs
 ```
 
-## 2. Part2
+## 2. Part2 tx.outcome.model
 
 This part provided prognosis prediction for treatment outcome model. There are four folders (*1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), and in each of them, there are three files written by R and Python. The three scripts are used for creating files for figure3C. We will take *1.DNAseq* as an example for step-by-step instruction on running the code
 
@@ -35,11 +35,11 @@ Step2. Run Python scripts *DNAseq.5fold.py* and *DNAseq.pca.5fold.py*. This step
 Step3. Back to run R script *1.DNAseq.drug.r* for C-index calculation and save the results.
 ```
 
-## 3. Part3
+## 3. Part3 pathway
 
 This is pathway analyses. There is a single file written by R. Before this part, make sure you have the following files: *panther.slim.go.ids.txt*, *coxRNAseq.txt*, *RNASeq_pvalue.csv*, *coxDNAseq.txt*, *DNAseq.pvalue.csv*, *coxDNAmethy.txt*, *DNAmethy_pvalue.csv*
 
-## 4. Part4
+## 4. Part4 plot
 
 This part provided figure2-figure6 plotting code
 
