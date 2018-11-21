@@ -1,0 +1,10 @@
+bp 0 3 natural killer cell activation
+bp 3 6 metabolic process
+bp 6 38 transcription, DNA-templated
+bp 38 77 apoptotic process
+bp 77 83 G-protein coupled receptor signaling pathway
+cc 0 145 endoplasmic reticulum
+cc 145 226 cytosol
+mf 0 11 ligase activity
+mf 11 18 tumor necrosis factor-activated receptor activity
+mf 18 21 amino acid transmembrane transporter activity

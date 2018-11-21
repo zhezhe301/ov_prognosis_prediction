@@ -1,0 +1,7 @@
+bp 0 1 bp 3 4
+bp 0 1 bp 9 10
+bp 0 1 bp 10 11
+bp 3 4 bp 9 10
+bp 3 4 bp 10 11
+bp 4 5 bp 8 9
+bp 9 10 bp 10 11

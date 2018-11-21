@@ -1,0 +1,535 @@
+,goid,BP,CC,MF,V27,go2eg,go2alleg
+1,GO:0000003,NA,1,1,reproduction,2,1315
+2,GO:0000165,NA,1,1,MAPK cascade,258,851
+3,GO:0000166,1,1,NA,nucleotide binding,308,2330
+4,GO:0000228,1,NA,1,nuclear chromosome,49,530
+5,GO:0000229,1,NA,1,cytoplasmic chromosome,NA,2
+6,GO:0000375,NA,1,1,"RNA splicing, via transesterification reactions",25,299
+7,GO:0000398,NA,1,1,"mRNA splicing, via spliceosome",218,295
+8,GO:0000910,NA,1,1,cytokinesis,47,135
+9,GO:0000981,1,1,NA,"RNA polymerase II transcription factor activity, sequence-specific DNA binding",161,647
+10,GO:0000988,1,1,NA,"transcription factor activity, protein binding",5,588
+11,GO:0000989,1,1,NA,"transcription factor activity, transcription factor binding",13,584
+12,GO:0000990,1,1,NA,"transcription factor activity, core RNA polymerase binding",NA,2
+13,GO:0000991,1,1,NA,"transcription factor activity, core RNA polymerase II binding",1,1
+14,GO:0000995,1,1,NA,"transcription factor activity, core RNA polymerase III binding",NA,1
+15,GO:0001007,1,1,NA,"transcription factor activity, RNA polymerase III transcription factor binding",NA,1
+16,GO:0001070,1,1,NA,RNA binding transcription factor activity,1,1
+17,GO:0001071,1,1,NA,nucleic acid binding transcription factor activity,2,1210
+18,GO:0001076,1,1,NA,"transcription factor activity, RNA polymerase II transcription factor binding",13,137
+19,GO:0001082,1,1,NA,"transcription factor activity, RNA polymerase I transcription factor binding",NA,1
+20,GO:0001167,1,1,NA,"RNA polymerase I transcription factor activity, sequence-specific DNA binding",NA,1
+21,GO:0001501,NA,1,1,skeletal system development,135,483
+22,GO:0001525,NA,1,1,angiogenesis,216,411
+23,GO:0001678,NA,1,1,cellular glucose homeostasis,13,123
+24,GO:0001816,NA,1,1,cytokine production,22,613
+25,GO:0001906,NA,1,1,cell killing,NA,105
+26,GO:0002376,NA,1,1,immune system process,27,2348
+27,GO:0002446,NA,1,1,neutrophil mediated immunity,9,25
+28,GO:0002447,NA,1,1,eosinophil mediated immunity,NA,6
+29,GO:0002504,NA,1,1,antigen processing and presentation of peptide or polysaccharide antigen via MHC class II,1,97
+30,GO:0002560,NA,1,1,basophil mediated immunity,NA,1
+31,GO:0003008,NA,1,1,system process,NA,1962
+32,GO:0003674,1,1,NA,molecular_function,735,16309
+33,GO:0003676,1,1,NA,nucleic acid binding,165,3963
+34,GO:0003677,1,1,NA,DNA binding,1421,2489
+35,GO:0003678,1,1,NA,DNA helicase activity,17,50
+36,GO:0003682,1,1,NA,chromatin binding,361,474
+37,GO:0003684,1,1,NA,damaged DNA binding,58,60
+38,GO:0003688,1,1,NA,DNA replication origin binding,10,10
+39,GO:0003690,1,1,NA,double-stranded DNA binding,72,777
+40,GO:0003697,1,1,NA,single-stranded DNA binding,85,94
+41,GO:0003700,1,1,NA,"transcription factor activity, sequence-specific DNA binding",856,1209
+42,GO:0003712,1,1,NA,transcription cofactor activity,65,533
+43,GO:0003723,1,1,NA,RNA binding,438,1605
+44,GO:0003724,1,1,NA,RNA helicase activity,11,67
+45,GO:0003729,1,1,NA,mRNA binding,111,165
+46,GO:0003735,1,1,NA,structural constituent of ribosome,210,210
+47,GO:0003743,1,1,NA,translation initiation factor activity,51,51
+48,GO:0003746,1,1,NA,translation elongation factor activity,19,19
+49,GO:0003747,1,1,NA,translation release factor activity,4,7
+50,GO:0003756,1,1,NA,protein disulfide isomerase activity,21,21
+51,GO:0003774,1,1,NA,motor activity,47,131
+52,GO:0003777,1,1,NA,microtubule motor activity,67,77
+53,GO:0003779,1,1,NA,actin binding,281,390
+54,GO:0003823,1,1,NA,antigen binding,66,112
+55,GO:0003824,1,1,NA,catalytic activity,53,5700
+56,GO:0003887,1,1,NA,DNA-directed DNA polymerase activity,28,28
+57,GO:0003896,1,1,NA,DNA primase activity,4,4
+58,GO:0003899,1,1,NA,DNA-directed RNA polymerase activity,22,42
+59,GO:0003909,1,1,NA,DNA ligase activity,4,7
+60,GO:0003916,1,1,NA,DNA topoisomerase activity,2,7
+61,GO:0003924,1,1,NA,GTPase activity,230,230
+62,GO:0003964,1,1,NA,RNA-directed DNA polymerase activity,8,14
+63,GO:0004016,1,1,NA,adenylate cyclase activity,10,10
+64,GO:0004190,1,1,NA,aspartic-type endopeptidase activity,20,25
+65,GO:0004383,1,1,NA,guanylate cyclase activity,8,8
+66,GO:0004386,1,1,NA,helicase activity,49,150
+67,GO:0004518,1,1,NA,nuclease activity,13,204
+68,GO:0004520,1,1,NA,endodeoxyribonuclease activity,21,51
+69,GO:0004521,1,1,NA,endoribonuclease activity,17,57
+70,GO:0004529,1,1,NA,exodeoxyribonuclease activity,NA,17
+71,GO:0004532,1,1,NA,exoribonuclease activity,5,31
+72,GO:0004553,1,1,NA,"hydrolase activity, hydrolyzing O-glycosyl compounds",5,93
+73,GO:0004601,1,1,NA,peroxidase activity,20,43
+74,GO:0004620,1,1,NA,phospholipase activity,11,96
+75,GO:0004645,1,1,NA,phosphorylase activity,2,6
+76,GO:0004672,1,1,NA,protein kinase activity,191,632
+77,GO:0004675,1,1,NA,transmembrane receptor protein serine/threonine kinase activity,7,16
+78,GO:0004714,1,1,NA,transmembrane receptor protein tyrosine kinase activity,30,64
+79,GO:0004715,1,1,NA,non-membrane spanning protein tyrosine kinase activity,46,46
+80,GO:0004721,1,1,NA,phosphoprotein phosphatase activity,37,175
+81,GO:0004801,1,1,NA,sedoheptulose-7-phosphate:D-glyceraldehyde-3-phosphate glyceronetransferase activity,1,1
+82,GO:0004802,1,1,NA,transketolase activity,3,3
+83,GO:0004812,1,1,NA,aminoacyl-tRNA ligase activity,NA,41
+84,GO:0004842,1,1,NA,ubiquitin-protein transferase activity,320,414
+85,GO:0004857,1,1,NA,enzyme inhibitor activity,26,374
+86,GO:0004867,1,1,NA,serine-type endopeptidase inhibitor activity,95,95
+87,GO:0004869,1,1,NA,cysteine-type endopeptidase inhibitor activity,34,56
+88,GO:0004871,1,1,NA,signal transducer activity,194,1721
+89,GO:0004872,1,1,NA,receptor activity,197,1643
+90,GO:0004879,1,1,NA,"RNA polymerase II transcription factor activity, ligand-activated sequence-specific DNA binding",34,47
+91,GO:0004896,1,1,NA,cytokine receptor activity,21,89
+92,GO:0004904,1,1,NA,interferon receptor activity,1,5
+93,GO:0004930,1,1,NA,G-protein coupled receptor activity,654,867
+94,GO:0005024,1,1,NA,transforming growth factor beta-activated receptor activity,6,9
+95,GO:0005031,1,1,NA,tumor necrosis factor-activated receptor activity,24,24
+96,GO:0005085,1,1,NA,guanyl-nucleotide exchange factor activity,109,306
+97,GO:0005102,1,1,NA,receptor binding,336,1439
+98,GO:0005125,1,1,NA,cytokine activity,174,220
+99,GO:0005126,1,1,NA,cytokine receptor binding,13,268
+100,GO:0005132,1,1,NA,type I interferon receptor binding,17,17
+101,GO:0005133,1,1,NA,interferon-gamma receptor binding,1,1
+102,GO:0005134,1,1,NA,interleukin-2 receptor binding,5,5
+103,GO:0005135,1,1,NA,interleukin-3 receptor binding,2,2
+104,GO:0005136,1,1,NA,interleukin-4 receptor binding,2,2
+105,GO:0005137,1,1,NA,interleukin-5 receptor binding,2,2
+106,GO:0005138,1,1,NA,interleukin-6 receptor binding,7,7
+107,GO:0005139,1,1,NA,interleukin-7 receptor binding,1,1
+108,GO:0005140,1,1,NA,interleukin-9 receptor binding,1,1
+109,GO:0005141,1,1,NA,interleukin-10 receptor binding,1,1
+110,GO:0005142,1,1,NA,interleukin-11 receptor binding,1,1
+111,GO:0005143,1,1,NA,interleukin-12 receptor binding,5,5
+112,GO:0005144,1,1,NA,interleukin-13 receptor binding,1,1
+113,GO:0005160,1,1,NA,transforming growth factor beta receptor binding,42,50
+114,GO:0005164,1,1,NA,tumor necrosis factor receptor binding,29,29
+115,GO:0005165,1,1,NA,neurotrophin receptor binding,NA,13
+116,GO:0005179,1,1,NA,hormone activity,92,119
+117,GO:0005184,1,1,NA,neuropeptide hormone activity,30,31
+118,GO:0005198,1,1,NA,structural molecule activity,216,743
+119,GO:0005200,1,1,NA,structural constituent of cytoskeleton,107,107
+120,GO:0005201,1,1,NA,extracellular matrix structural constituent,62,77
+121,GO:0005215,1,1,NA,transporter activity,135,1296
+122,GO:0005216,1,1,NA,ion channel activity,15,421
+123,GO:0005243,1,1,NA,gap junction channel activity,12,16
+124,GO:0005244,1,1,NA,voltage-gated ion channel activity,28,188
+125,GO:0005245,1,1,NA,voltage-gated calcium channel activity,40,42
+126,GO:0005246,1,1,NA,calcium channel regulator activity,27,36
+127,GO:0005248,1,1,NA,voltage-gated sodium channel activity,19,20
+128,GO:0005249,1,1,NA,voltage-gated potassium channel activity,45,89
+129,GO:0005253,1,1,NA,anion channel activity,3,92
+130,GO:0005261,1,1,NA,cation channel activity,20,299
+131,GO:0005319,1,1,NA,lipid transporter activity,17,110
+132,GO:0005326,1,1,NA,neurotransmitter transporter activity,6,25
+133,GO:0005484,1,1,NA,SNAP receptor activity,38,38
+134,GO:0005488,1,1,NA,binding,NA,13201
+135,GO:0005509,1,1,NA,calcium ion binding,692,692
+136,GO:0005515,1,1,NA,protein binding,6144,8879
+137,GO:0005516,1,1,NA,calmodulin binding,188,188
+138,GO:0005544,1,1,NA,calcium-dependent phospholipid binding,45,45
+139,GO:0005575,1,NA,1,cellular_component,482,17942
+140,GO:0005576,1,NA,1,extracellular region,1476,4531
+141,GO:0005578,1,NA,1,proteinaceous extracellular matrix,244,356
+142,GO:0005615,1,NA,1,extracellular space,1294,1381
+143,GO:0005618,1,NA,1,cell wall,2,2
+144,GO:0005622,1,NA,1,intracellular,532,13930
+145,GO:0005634,1,NA,1,nucleus,5114,6887
+146,GO:0005635,1,NA,1,nuclear envelope,155,420
+147,GO:0005654,1,NA,1,nucleoplasm,2744,2946
+148,GO:0005694,1,NA,1,chromosome,95,906
+149,GO:0005730,1,NA,1,nucleolus,804,831
+150,GO:0005737,1,NA,1,cytoplasm,4946,10548
+151,GO:0005739,1,NA,1,mitochondrion,1221,1634
+152,GO:0005743,1,NA,1,mitochondrial inner membrane,412,474
+153,GO:0005764,1,NA,1,lysosome,213,530
+154,GO:0005768,1,NA,1,endosome,212,791
+155,GO:0005773,1,NA,1,vacuole,15,1184
+156,GO:0005777,1,NA,1,peroxisome,97,128
+157,GO:0005783,1,NA,1,endoplasmic reticulum,784,1627
+158,GO:0005794,1,NA,1,Golgi apparatus,798,1439
+159,GO:0005811,1,NA,1,lipid particle,65,65
+160,GO:0005815,1,NA,1,microtubule organizing center,135,629
+161,GO:0005829,1,NA,1,cytosol,3254,3327
+162,GO:0005834,1,NA,1,heterotrimeric G-protein complex,31,31
+163,GO:0005840,1,NA,1,ribosome,55,226
+164,GO:0005856,1,NA,1,cytoskeleton,331,2009
+165,GO:0005874,1,NA,1,microtubule,287,394
+166,GO:0005886,1,NA,1,plasma membrane,3988,5014
+167,GO:0005902,1,NA,1,microvillus,57,73
+168,GO:0005905,1,NA,1,clathrin-coated pit,55,69
+169,GO:0005921,1,NA,1,gap junction,15,30
+170,GO:0005923,1,NA,1,bicellular tight junction,111,111
+171,GO:0005929,1,NA,1,cilium,118,495
+172,GO:0005975,NA,1,1,carbohydrate metabolic process,123,550
+173,GO:0005976,NA,1,1,polysaccharide metabolic process,2,106
+174,GO:0005977,NA,1,1,glycogen metabolic process,26,76
+175,GO:0005984,NA,1,1,disaccharide metabolic process,1,10
+176,GO:0005996,NA,1,1,monosaccharide metabolic process,1,247
+177,GO:0006091,NA,1,1,generation of precursor metabolites and energy,52,352
+178,GO:0006094,NA,1,1,gluconeogenesis,44,79
+179,GO:0006096,NA,1,1,glycolytic process,24,67
+180,GO:0006098,NA,1,1,pentose-phosphate shunt,11,18
+181,GO:0006099,NA,1,1,tricarboxylic acid cycle,28,28
+182,GO:0006109,NA,1,1,regulation of carbohydrate metabolic process,NA,146
+183,GO:0006119,NA,1,1,oxidative phosphorylation,12,97
+184,GO:0006139,NA,1,1,nucleobase-containing compound metabolic process,34,5646
+185,GO:0006144,NA,1,1,purine nucleobase metabolic process,5,19
+186,GO:0006206,NA,1,1,pyrimidine nucleobase metabolic process,6,19
+187,GO:0006259,NA,1,1,DNA metabolic process,22,962
+188,GO:0006260,NA,1,1,DNA replication,139,287
+189,GO:0006281,NA,1,1,DNA repair,196,511
+190,GO:0006308,NA,1,1,DNA catabolic process,6,32
+191,GO:0006310,NA,1,1,DNA recombination,69,259
+192,GO:0006325,NA,1,1,chromatin organization,39,743
+193,GO:0006338,NA,1,1,chromatin remodeling,81,158
+194,GO:0006351,NA,1,1,"transcription, DNA-templated",1786,3683
+195,GO:0006357,NA,1,1,regulation of transcription from RNA polymerase II promoter,401,1794
+196,GO:0006366,NA,1,1,transcription from RNA polymerase II promoter,509,1986
+197,GO:0006367,NA,1,1,transcription initiation from RNA polymerase II promoter,150,173
+198,GO:0006368,NA,1,1,transcription elongation from RNA polymerase II promoter,83,95
+199,GO:0006369,NA,1,1,termination of RNA polymerase II transcription,62,62
+200,GO:0006370,NA,1,1,7-methylguanosine mRNA capping,33,33
+201,GO:0006378,NA,1,1,mRNA polyadenylation,28,39
+202,GO:0006397,NA,1,1,mRNA processing,160,466
+203,GO:0006399,NA,1,1,tRNA metabolic process,2,179
+204,GO:0006401,NA,1,1,RNA catabolic process,21,241
+205,GO:0006403,NA,1,1,RNA localization,2,202
+206,GO:0006412,NA,1,1,translation,219,637
+207,GO:0006417,NA,1,1,regulation of translation,51,335
+208,GO:0006418,NA,1,1,tRNA aminoacylation for protein translation,36,47
+209,GO:0006457,NA,1,1,protein folding,164,222
+210,GO:0006461,NA,1,1,protein complex assembly,115,1387
+211,GO:0006464,NA,1,1,cellular protein modification process,92,3738
+212,GO:0006468,NA,1,1,protein phosphorylation,441,1822
+213,GO:0006471,NA,1,1,protein ADP-ribosylation,17,22
+214,GO:0006473,NA,1,1,protein acetylation,9,183
+215,GO:0006479,NA,1,1,protein methylation,19,163
+216,GO:0006486,NA,1,1,protein glycosylation,76,271
+217,GO:0006497,NA,1,1,protein lipidation,10,83
+218,GO:0006508,NA,1,1,proteolysis,458,1625
+219,GO:0006520,NA,1,1,cellular amino acid metabolic process,30,289
+220,GO:0006521,NA,1,1,regulation of cellular amino acid metabolic process,51,54
+221,GO:0006605,NA,1,1,protein targeting,34,677
+222,GO:0006629,NA,1,1,lipid metabolic process,126,1315
+223,GO:0006631,NA,1,1,fatty acid metabolic process,48,357
+224,GO:0006633,NA,1,1,fatty acid biosynthetic process,40,139
+225,GO:0006635,NA,1,1,fatty acid beta-oxidation,40,71
+226,GO:0006636,NA,1,1,unsaturated fatty acid biosynthetic process,15,58
+227,GO:0006637,NA,1,1,acyl-CoA metabolic process,17,92
+228,GO:0006644,NA,1,1,phospholipid metabolic process,48,386
+229,GO:0006732,NA,1,1,coenzyme metabolic process,NA,299
+230,GO:0006766,NA,1,1,vitamin metabolic process,7,131
+231,GO:0006778,NA,1,1,porphyrin-containing compound metabolic process,2,36
+232,GO:0006790,NA,1,1,sulfur compound metabolic process,16,355
+233,GO:0006796,NA,1,1,phosphate-containing compound metabolic process,17,3002
+234,GO:0006807,NA,1,1,nitrogen compound metabolic process,9,6776
+235,GO:0006809,NA,1,1,nitric oxide biosynthetic process,13,63
+236,GO:0006810,NA,1,1,transport,288,4509
+237,GO:0006811,NA,1,1,ion transport,104,1411
+238,GO:0006812,NA,1,1,cation transport,22,944
+239,GO:0006817,NA,1,1,phosphate ion transport,7,23
+240,GO:0006820,NA,1,1,anion transport,14,454
+241,GO:0006839,NA,1,1,mitochondrial transport,13,268
+242,GO:0006858,NA,1,1,extracellular transport,NA,1
+243,GO:0006865,NA,1,1,amino acid transport,33,89
+244,GO:0006869,NA,1,1,lipid transport,68,313
+245,GO:0006874,NA,1,1,cellular calcium ion homeostasis,88,370
+246,GO:0006886,NA,1,1,intracellular protein transport,205,1011
+247,GO:0006887,NA,1,1,exocytosis,71,389
+248,GO:0006897,NA,1,1,endocytosis,130,625
+249,GO:0006898,NA,1,1,receptor-mediated endocytosis,148,286
+250,GO:0006907,NA,1,1,pinocytosis,4,19
+251,GO:0006909,NA,1,1,phagocytosis,45,238
+252,GO:0006915,NA,1,1,apoptotic process,525,1765
+253,GO:0006928,NA,1,1,movement of cell or subcellular component,85,1741
+254,GO:0006936,NA,1,1,muscle contraction,104,319
+255,GO:0006950,NA,1,1,response to stress,57,3557
+256,GO:0006955,NA,1,1,immune response,341,1509
+257,GO:0006956,NA,1,1,complement activation,51,85
+258,GO:0006968,NA,1,1,cellular defense response,60,60
+259,GO:0006996,NA,1,1,organelle organization,14,3172
+260,GO:0007005,NA,1,1,mitochondrion organization,69,624
+261,GO:0007010,NA,1,1,cytoskeleton organization,155,1099
+262,GO:0007028,NA,1,1,cytoplasm organization,4,10
+263,GO:0007041,NA,1,1,lysosomal transport,12,77
+264,GO:0007049,NA,1,1,cell cycle,196,1663
+265,GO:0007059,NA,1,1,chromosome segregation,64,318
+266,GO:0007067,NA,1,1,mitotic nuclear division,237,429
+267,GO:0007126,NA,1,1,meiotic nuclear division,24,169
+268,GO:0007154,NA,1,1,cell communication,28,6089
+269,GO:0007155,NA,1,1,cell adhesion,409,1683
+270,GO:0007160,NA,1,1,cell-matrix adhesion,89,193
+271,GO:0007165,NA,1,1,signal transduction,1064,5623
+272,GO:0007166,NA,1,1,cell surface receptor signaling pathway,266,2595
+273,GO:0007169,NA,1,1,transmembrane receptor protein tyrosine kinase signaling pathway,87,655
+274,GO:0007178,NA,1,1,transmembrane receptor protein serine/threonine kinase signaling pathway,12,307
+275,GO:0007186,NA,1,1,G-protein coupled receptor signaling pathway,867,1252
+276,GO:0007249,NA,1,1,I-kappaB kinase/NF-kappaB signaling,59,258
+277,GO:0007254,NA,1,1,JNK cascade,46,189
+278,GO:0007259,NA,1,1,JAK-STAT cascade,30,164
+279,GO:0007263,NA,1,1,nitric oxide mediated signal transduction,19,24
+280,GO:0007267,NA,1,1,cell-cell signaling,248,1485
+281,GO:0007268,NA,1,1,chemical synaptic transmission,235,588
+282,GO:0007269,NA,1,1,neurotransmitter secretion,50,134
+283,GO:0007270,NA,1,1,neuron-neuron synaptic transmission,6,127
+284,GO:0007274,NA,1,1,neuromuscular synaptic transmission,26,29
+285,GO:0007276,NA,1,1,gamete generation,17,607
+286,GO:0007283,NA,1,1,spermatogenesis,369,487
+287,GO:0007292,NA,1,1,female gamete generation,16,105
+288,GO:0007379,NA,1,1,segment specification,7,17
+289,GO:0007389,NA,1,1,pattern specification process,28,433
+290,GO:0007398,NA,1,1,ectoderm development,13,21
+291,GO:0007399,NA,1,1,nervous system development,275,2099
+292,GO:0007492,NA,1,1,endoderm development,20,76
+293,GO:0007498,NA,1,1,mesoderm development,32,126
+294,GO:0007507,NA,1,1,heart development,170,493
+295,GO:0007517,NA,1,1,muscle organ development,87,344
+296,GO:0007530,NA,1,1,sex determination,6,23
+297,GO:0007596,NA,1,1,blood coagulation,182,350
+298,GO:0007600,NA,1,1,sensory perception,12,946
+299,GO:0007601,NA,1,1,visual perception,197,206
+300,GO:0007605,NA,1,1,sensory perception of sound,132,141
+301,GO:0007606,NA,1,1,sensory perception of chemical stimulus,9,522
+302,GO:0007608,NA,1,1,sensory perception of smell,154,453
+303,GO:0007610,NA,1,1,behavior,5,540
+304,GO:0007623,NA,1,1,circadian rhythm,73,190
+305,GO:0008009,1,1,NA,chemokine activity,48,48
+306,GO:0008015,NA,1,1,blood circulation,43,484
+307,GO:0008017,1,1,NA,microtubule binding,204,214
+308,GO:0008037,NA,1,1,cell recognition,22,149
+309,GO:0008047,1,1,NA,enzyme activator activity,47,482
+310,GO:0008066,1,1,NA,glutamate receptor activity,11,27
+311,GO:0008081,1,1,NA,phosphoric diester hydrolase activity,8,90
+312,GO:0008083,1,1,NA,growth factor activity,162,162
+313,GO:0008092,1,1,NA,cytoskeletal protein binding,48,837
+314,GO:0008104,NA,1,1,protein localization,55,2379
+315,GO:0008105,NA,1,1,asymmetric protein localization,4,18
+316,GO:0008135,1,1,NA,"translation factor activity, RNA binding",27,88
+317,GO:0008143,1,1,NA,poly(A) binding,12,12
+318,GO:0008150,NA,1,1,biological_process,642,16672
+319,GO:0008152,NA,1,1,metabolic process,42,10817
+320,GO:0008168,1,1,NA,methyltransferase activity,49,209
+321,GO:0008173,1,1,NA,RNA methyltransferase activity,11,54
+322,GO:0008191,1,1,NA,metalloendopeptidase inhibitor activity,15,15
+323,GO:0008202,NA,1,1,steroid metabolic process,39,273
+324,GO:0008203,NA,1,1,cholesterol metabolic process,64,121
+325,GO:0008206,NA,1,1,bile acid metabolic process,16,43
+326,GO:0008219,NA,1,1,cell death,37,1892
+327,GO:0008233,1,1,NA,peptidase activity,70,654
+328,GO:0008234,1,1,NA,cysteine-type peptidase activity,29,187
+329,GO:0008236,1,1,NA,serine-type peptidase activity,60,236
+330,GO:0008237,1,1,NA,metallopeptidase activity,59,186
+331,GO:0008283,NA,1,1,cell proliferation,355,1899
+332,GO:0008289,1,1,NA,lipid binding,135,625
+333,GO:0008324,1,1,NA,cation transmembrane transporter activity,5,602
+334,GO:0008380,NA,1,1,RNA splicing,155,393
+335,GO:0008483,1,1,NA,transaminase activity,5,21
+336,GO:0008643,NA,1,1,carbohydrate transport,18,187
+337,GO:0008652,NA,1,1,cellular amino acid biosynthetic process,24,64
+338,GO:0009008,1,1,NA,DNA-methyltransferase activity,4,6
+339,GO:0009055,1,1,NA,electron carrier activity,87,114
+340,GO:0009056,NA,1,1,catabolic process,7,1950
+341,GO:0009058,NA,1,1,biosynthetic process,12,6167
+342,GO:0009063,NA,1,1,cellular amino acid catabolic process,2,81
+343,GO:0009110,NA,1,1,vitamin biosynthetic process,NA,22
+344,GO:0009111,NA,1,1,vitamin catabolic process,NA,10
+345,GO:0009187,NA,1,1,cyclic nucleotide metabolic process,3,183
+346,GO:0009295,1,NA,1,nucleoid,NA,43
+347,GO:0009299,NA,1,1,mRNA transcription,5,20
+348,GO:0009566,NA,1,1,fertilization,37,164
+349,GO:0009605,NA,1,1,response to external stimulus,4,1996
+350,GO:0009607,NA,1,1,response to biotic stimulus,11,839
+351,GO:0009628,NA,1,1,response to abiotic stimulus,2,1064
+352,GO:0009636,NA,1,1,response to toxic substance,82,202
+353,GO:0009653,NA,1,1,anatomical structure morphogenesis,90,2507
+354,GO:0009719,NA,1,1,response to endogenous stimulus,NA,1501
+355,GO:0009790,NA,1,1,embryo development,38,935
+356,GO:0009948,NA,1,1,anterior/posterior axis specification,17,48
+357,GO:0009950,NA,1,1,dorsal/ventral axis specification,12,21
+358,GO:0009987,NA,1,1,cellular process,5,14950
+359,GO:0015031,NA,1,1,protein transport,363,1795
+360,GO:0015078,1,1,NA,hydrogen ion transmembrane transporter activity,14,106
+361,GO:0015144,1,1,NA,carbohydrate transmembrane transporter activity,NA,44
+362,GO:0015171,1,1,NA,amino acid transmembrane transporter activity,42,76
+363,GO:0015276,1,1,NA,ligand-gated ion channel activity,34,143
+364,GO:0015459,1,1,NA,potassium channel regulator activity,38,45
+365,GO:0015464,1,1,NA,acetylcholine receptor activity,16,24
+366,GO:0015629,1,NA,1,actin cytoskeleton,213,451
+367,GO:0015925,1,1,NA,galactosidase activity,NA,7
+368,GO:0015926,1,1,NA,glucosidase activity,1,12
+369,GO:0015931,NA,1,1,nucleobase-containing compound transport,1,203
+370,GO:0016020,1,NA,1,membrane,1907,8982
+371,GO:0016021,1,NA,1,integral component of membrane,3620,5329
+372,GO:0016023,1,NA,1,"cytoplasmic, membrane-bounded vesicle",134,1158
+373,GO:0016032,NA,1,1,viral process,292,942
+374,GO:0016043,NA,1,1,cellular component organization,NA,5870
+375,GO:0016049,NA,1,1,cell growth,54,481
+376,GO:0016070,NA,1,1,RNA metabolic process,8,4546
+377,GO:0016072,NA,1,1,rRNA metabolic process,1,266
+378,GO:0016079,NA,1,1,synaptic vesicle exocytosis,16,77
+379,GO:0016160,1,1,NA,amylase activity,1,6
+380,GO:0016192,NA,1,1,vesicle-mediated transport,97,1417
+381,GO:0016209,1,1,NA,antioxidant activity,17,77
+382,GO:0016247,1,1,NA,channel regulator activity,8,128
+383,GO:0016298,1,1,NA,lipase activity,4,120
+384,GO:0016301,1,1,NA,kinase activity,75,834
+385,GO:0016337,NA,1,1,single organismal cell-cell adhesion,95,710
+386,GO:0016407,1,1,NA,acetyltransferase activity,11,102
+387,GO:0016462,1,1,NA,pyrophosphatase activity,5,794
+388,GO:0016491,1,1,NA,oxidoreductase activity,90,725
+389,GO:0016740,1,1,NA,transferase activity,23,2311
+390,GO:0016746,1,1,NA,"transferase activity, transferring acyl groups",16,252
+391,GO:0016757,1,1,NA,"transferase activity, transferring glycosyl groups",11,278
+392,GO:0016779,1,1,NA,nucleotidyltransferase activity,12,132
+393,GO:0016787,1,1,NA,hydrolase activity,86,2448
+394,GO:0016788,1,1,NA,"hydrolase activity, acting on ester bonds",10,733
+395,GO:0016791,1,1,NA,phosphatase activity,31,271
+396,GO:0016799,1,1,NA,"hydrolase activity, hydrolyzing N-glycosyl compounds",2,22
+397,GO:0016829,1,1,NA,lyase activity,14,170
+398,GO:0016831,1,1,NA,carboxy-lyase activity,8,36
+399,GO:0016832,1,1,NA,aldehyde-lyase activity,NA,9
+400,GO:0016836,1,1,NA,hydro-lyase activity,2,49
+401,GO:0016853,1,1,NA,isomerase activity,7,151
+402,GO:0016854,1,1,NA,racemase and epimerase activity,1,15
+403,GO:0016866,1,1,NA,intramolecular transferase activity,1,26
+404,GO:0016874,1,1,NA,ligase activity,227,371
+405,GO:0016917,1,1,NA,GABA receptor activity,1,22
+406,GO:0017080,1,1,NA,sodium channel regulator activity,30,33
+407,GO:0017081,1,1,NA,chloride channel regulator activity,9,17
+408,GO:0019104,1,1,NA,DNA N-glycosylase activity,9,14
+409,GO:0019199,1,1,NA,transmembrane receptor protein kinase activity,NA,80
+410,GO:0019200,1,1,NA,carbohydrate kinase activity,1,20
+411,GO:0019201,1,1,NA,nucleotide kinase activity,1,24
+412,GO:0019202,1,1,NA,amino acid kinase activity,NA,1
+413,GO:0019203,1,1,NA,carbohydrate phosphatase activity,NA,10
+414,GO:0019207,1,1,NA,kinase regulator activity,2,187
+415,GO:0019208,1,1,NA,phosphatase regulator activity,7,86
+416,GO:0019209,1,1,NA,kinase activator activity,7,67
+417,GO:0019210,1,1,NA,kinase inhibitor activity,4,88
+418,GO:0019211,1,1,NA,phosphatase activator activity,3,11
+419,GO:0019212,1,1,NA,phosphatase inhibitor activity,5,38
+420,GO:0019213,1,1,NA,deacetylase activity,8,53
+421,GO:0019215,1,1,NA,intermediate filament binding,9,14
+422,GO:0019219,NA,1,1,regulation of nucleobase-containing compound metabolic process,NA,4018
+423,GO:0019220,NA,1,1,regulation of phosphate metabolic process,NA,1578
+424,GO:0019221,NA,1,1,cytokine-mediated signaling pathway,124,543
+425,GO:0019227,NA,1,1,neuronal action potential propagation,7,7
+426,GO:0019229,NA,1,1,regulation of vasoconstriction,18,58
+427,GO:0019233,NA,1,1,sensory perception of pain,52,91
+428,GO:0019236,NA,1,1,response to pheromone,8,9
+429,GO:0019237,1,1,NA,centromeric DNA binding,7,7
+430,GO:0019239,1,1,NA,deaminase activity,5,33
+431,GO:0019538,NA,1,1,protein metabolic process,4,5295
+432,GO:0019722,NA,1,1,calcium-mediated signaling,44,146
+433,GO:0019724,NA,1,1,B cell mediated immunity,3,131
+434,GO:0019740,NA,1,1,nitrogen utilization,5,9
+435,GO:0019748,NA,1,1,secondary metabolic process,NA,57
+436,GO:0019763,1,1,NA,immunoglobulin receptor activity,1,5
+437,GO:0019814,1,NA,1,immunoglobulin complex,NA,26
+438,GO:0019825,1,1,NA,oxygen binding,44,47
+439,GO:0019882,NA,1,1,antigen processing and presentation,36,223
+440,GO:0019911,1,1,NA,structural constituent of myelin sheath,5,5
+441,GO:0022602,NA,1,1,ovulation cycle process,4,82
+442,GO:0022610,NA,1,1,biological adhesion,NA,1689
+443,GO:0022857,1,1,NA,transmembrane transporter activity,24,1010
+444,GO:0022904,NA,1,1,respiratory electron transport chain,13,93
+445,GO:0030054,1,NA,1,cell junction,448,1358
+446,GO:0030097,NA,1,1,hemopoiesis,52,705
+447,GO:0030101,NA,1,1,natural killer cell activation,19,74
+448,GO:0030120,1,NA,1,vesicle coat,2,46
+449,GO:0030154,NA,1,1,cell differentiation,440,3537
+450,GO:0030234,1,1,NA,enzyme regulator activity,16,968
+451,GO:0030246,1,1,NA,carbohydrate binding,180,251
+452,GO:0030312,1,NA,1,external encapsulating structure,NA,10
+453,GO:0030313,1,NA,1,cell envelope,1,8
+454,GO:0030337,1,1,NA,DNA polymerase processivity factor activity,2,2
+455,GO:0030380,1,1,NA,interleukin-17E receptor binding,1,1
+456,GO:0030414,1,1,NA,peptidase inhibitor activity,11,178
+457,GO:0030424,1,NA,1,axon,214,401
+458,GO:0030425,1,NA,1,dendrite,328,456
+459,GO:0030529,1,NA,1,intracellular ribonucleoprotein complex,116,743
+460,GO:0030545,1,1,NA,receptor regulator activity,NA,44
+461,GO:0030546,1,1,NA,receptor activator activity,4,30
+462,GO:0030547,1,1,NA,receptor inhibitor activity,1,13
+463,GO:0030879,NA,1,1,mammary gland development,21,127
+464,GO:0031012,1,NA,1,extracellular matrix,276,523
+465,GO:0031124,NA,1,1,mRNA 3'-end processing,48,85
+466,GO:0031201,1,NA,1,SNARE complex,51,53
+467,GO:0031386,1,1,NA,protein tag,8,8
+468,GO:0031497,NA,1,1,chromatin assembly,7,160
+469,GO:0031594,1,NA,1,neuromuscular junction,54,54
+470,GO:0032393,1,1,NA,MHC class I receptor activity,5,9
+471,GO:0032394,1,1,NA,MHC class Ib receptor activity,2,2
+472,GO:0032395,1,1,NA,MHC class II receptor activity,10,10
+473,GO:0032501,NA,1,1,multicellular organismal process,NA,6828
+474,GO:0032502,NA,1,1,developmental process,17,5709
+475,GO:0032543,NA,1,1,mitochondrial translation,32,120
+476,GO:0032791,1,1,NA,lead ion binding,1,1
+477,GO:0032989,NA,1,1,cellular component morphogenesis,NA,1179
+478,GO:0032991,1,NA,1,macromolecular complex,3,4726
+479,GO:0032993,1,NA,1,protein-DNA complex,24,173
+480,GO:0034341,NA,1,1,response to interferon-gamma,23,159
+481,GO:0035556,NA,1,1,intracellular signal transduction,351,2588
+482,GO:0040007,NA,1,1,growth,27,926
+483,GO:0040011,NA,1,1,locomotion,8,1494
+484,GO:0040029,NA,1,1,"regulation of gene expression, epigenetic",13,256
+485,GO:0042116,NA,1,1,macrophage activation,10,54
+486,GO:0042175,1,NA,1,nuclear outer membrane-endoplasmic reticulum membrane network,2,1004
+487,GO:0042558,NA,1,1,pteridine-containing compound metabolic process,1,33
+488,GO:0042592,NA,1,1,homeostatic process,11,1585
+489,GO:0042611,1,NA,1,MHC protein complex,NA,25
+490,GO:0042626,1,1,NA,"ATPase activity, coupled to transmembrane movement of substances",33,110
+491,GO:0042734,1,NA,1,presynaptic membrane,59,60
+492,GO:0042742,NA,1,1,defense response to bacterium,133,251
+493,GO:0042995,1,NA,1,cell projection,68,1793
+494,GO:0043005,1,NA,1,neuron projection,229,938
+495,GO:0043025,1,NA,1,neuronal cell body,301,406
+496,GO:0043066,NA,1,1,negative regulation of apoptotic process,435,790
+497,GO:0043226,1,NA,1,organelle,NA,12881
+498,GO:0043234,1,NA,1,protein complex,363,3985
+499,GO:0043574,NA,1,1,peroxisomal transport,NA,18
+500,GO:0043855,1,1,NA,cyclic nucleotide-gated ion channel activity,NA,11
+501,GO:0044085,NA,1,1,cellular component biogenesis,NA,2781
+502,GO:0044238,NA,1,1,primary metabolic process,NA,9990
+503,GO:0044464,1,NA,1,cell part,NA,16101
+504,GO:0044706,NA,1,1,multi-multicellular organism process,NA,201
+505,GO:0044707,NA,1,1,single-multicellular organism process,NA,5802
+506,GO:0045111,1,NA,1,intermediate filament cytoskeleton,51,239
+507,GO:0045177,1,NA,1,apical part of cell,70,343
+508,GO:0045178,1,NA,1,basal part of cell,13,46
+509,GO:0045182,1,1,NA,translation regulator activity,6,36
+510,GO:0045202,1,NA,1,synapse,165,717
+511,GO:0045211,1,NA,1,postsynaptic membrane,205,205
+512,GO:0045259,1,NA,1,proton-transporting ATP synthase complex,NA,22
+513,GO:0045298,1,NA,1,tubulin complex,3,3
+514,GO:0046933,1,1,NA,"proton-transporting ATP synthase activity, rotational mechanism",15,15
+515,GO:0048511,NA,1,1,rhythmic process,52,310
+516,GO:0048512,NA,1,1,circadian behavior,6,43
+517,GO:0048731,NA,1,1,system development,2,4167
+518,GO:0050789,NA,1,1,regulation of biological process,NA,10652
+519,GO:0050790,NA,1,1,regulation of catalytic activity,55,2308
+520,GO:0050828,NA,1,1,regulation of liquid surface tension,1,1
+521,GO:0050877,NA,1,1,neurological system process,8,1263
+522,GO:0050896,NA,1,1,response to stimulus,61,8081
+523,GO:0050909,NA,1,1,sensory perception of taste,16,63
+524,GO:0051090,NA,1,1,regulation of sequence-specific DNA binding transcription factor activity,25,362
+525,GO:0051098,NA,1,1,regulation of binding,4,290
+526,GO:0051169,NA,1,1,nuclear transport,4,457
+527,GO:0051179,NA,1,1,localization,NA,5684
+528,GO:0051180,NA,1,1,vitamin transport,5,33
+529,GO:0051189,NA,1,1,prosthetic group metabolic process,NA,6
+530,GO:0051726,NA,1,1,regulation of cell cycle,111,931
+531,GO:0065007,NA,1,1,biological regulation,NA,11279
+532,GO:0065009,NA,1,1,regulation of molecular function,NA,2796
+533,GO:0070271,NA,1,1,protein complex biogenesis,NA,1387
+534,GO:0071840,NA,1,1,cellular component organization or biogenesis,NA,6020

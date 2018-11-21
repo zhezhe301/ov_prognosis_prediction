@@ -1,0 +1,7 @@
+bp 0 3 fill_color=try1_a2
+bp 3 6 fill_color=try1_a3
+bp 6 9 fill_color=try1_a2
+bp 9 10 fill_color=try1_a3
+bp 10 12 fill_color=try1_a2
+cc 0 16 fill_color=try2_a3
+mf 0 1 fill_color=try3_a2
