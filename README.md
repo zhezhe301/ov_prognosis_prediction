@@ -5,7 +5,7 @@ Assessing the clinical utility of multi-omics data for predicting serous ovarian
 
 ## Prerequisites
 
-Basically, we use R and Python programming language to write these scripts. Required packages are free to get, and specificly, TensorFlow should follow the instruction on https://www.tensorflow.org/tutorials/, and circos plot should follow the tutorials on http://circos.ca/documentation/tutorials/ to install them.
+Basically, we use R and Python programming language to write these scripts. Required packages are free to get, and specificly, TensorFlow should follow the instruction on https://www.tensorflow.org/tutorials/, and circos plot should follow the tutorials on http://circos.ca/documentation/tutorials/ to install them. Notice that the file ** need to be unzipped, and the file ** need to be downloaded on (when you open the file  you will also find the link) 
 
 ## Getting Started
 
