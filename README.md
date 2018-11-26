@@ -72,7 +72,7 @@ The directory *figure6* including scripts and data for generating figure6 circos
 The circos plot have tutorials on http://circos.ca/documentation/tutorials/. Before the figure6 plot, we recommend you have read the tutorials and installed circos. For UNIX users, just run corresponding script named *circos.pathway.conf* (for Windows users, see in their tutorials)
 
 ```
-../bin/circos -conf figure6/figure6E.dnamethy.sv.config/circos.pathway.conf 
+../bin/circos -conf 4.plot/figure6/figure6E.dnamethy.sv.config/circos.pathway.conf 
 ```
 
 The files you need to use are already provided in the corresponding folder and remember to change the file path on your local machine. The file *karyotype.dnamethy.txt* defines the axes, these are typically outer ring of BIOLOGICAL_PROCESS (bp), CELLULAR_COMPONENT (cc), MOLECULAR_FUNCTION (mf), and their size. The file *highlight.2level.txt* defines the position and color of parent terms of the significant GO terms (the inner ring), their labels are described by the file *labels.2level.txt*. The file *highlight.3level.txt* defines the position and color of the significant GO terms (the third ring), their labels are described by the file *labels.3level.txt*, and their average fold changes are described by the file *histogram.3level.txt*. The files *links.txt*, *links1.txt*, *links2.txt*, *links3.txt*, and *links4.txt* define the overlapping genes of significant pathways (the bezier curves). 
