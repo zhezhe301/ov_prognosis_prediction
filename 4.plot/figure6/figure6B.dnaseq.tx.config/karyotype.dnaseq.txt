@@ -1,0 +1,3 @@
+chr - bp BIOLOGICAL_PROCESS 0 12 try1
+chr - cc CELLULAR_COMPONENT 0 16 try2
+chr - mf MOLECULAR_FUNCTION 0 1 try3

@@ -1,0 +1,7 @@
+bp 0 3 transcription initiation from RNA polymerase II promoter
+bp 3 6 protein acetylation
+bp 6 9 heart development
+bp 9 10 homeostatic process
+bp 10 12 protein complex assembly
+cc 0 16 cytoplasm
+mf 0 1 acetyltransferase activity
