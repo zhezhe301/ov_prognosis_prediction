@@ -1,9 +1,0 @@
-bp 0 18 protein phosphorylation
-bp 18 35 cell adhesion
-bp 35 65 heart development
-cc 0 38 extracellular region
-cc 38 62 extracellular matrix
-cc 62 63 mitochondrial inner membrane
-cc 63 64 cell wall
-mf 0 5 extracellular matrix structural constituent
-mf 5 44 calcium ion binding
