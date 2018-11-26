@@ -5,7 +5,7 @@ Assessing the clinical utility of multi-omics data for predicting serous ovarian
 
 ## Prerequisites
 
-Basically, we use R and Python programming language to write these scripts. Required packages are free to get, and specificly, TensorFlow should follow the instruction on https://www.tensorflow.org/tutorials/, and circos plot should follow the tutorials on http://circos.ca/documentation/tutorials/ to install them. Notice that the file *tcga.RNAseq.csv.gz* need to be unzipped, and the file *tcga.DNAmethylation.txt* need to be downloaded from http://cbportal.org/pubfiles/tcga.DNAmethylation.txt.gz (when you open the file *tcga.DNAmethylation.txt* you will also find the link).
+Basically, we use R and Python programming language to write these scripts. Required packages are easy to install, and specificly, TensorFlow should follow the instruction on https://www.tensorflow.org/tutorials/, and circos plot should follow the tutorials on http://circos.ca/documentation/tutorials/ to install. Notice that the file *tcga.RNAseq.csv.gz* need to be unzipped, and the file *tcga.DNAmethylation.txt* need to be downloaded from http://cbportal.org/pubfiles/tcga.DNAmethylation.txt.gz (when you open the file *tcga.DNAmethylation.txt* you will also find the link).
 
 ## Getting Started
 
