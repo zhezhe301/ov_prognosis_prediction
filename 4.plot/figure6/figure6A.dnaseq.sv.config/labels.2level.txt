@@ -1,9 +1,0 @@
-bp 0 2 macrophage activation
-bp 2 36 transcription, DNA-templated
-bp 36 40 single organismal cell-cell adhesion
-bp 40 42 cytokine production
-bp 42 53 nervous system development
-bp 53 63 intracellular protein transport
-cc 0 7 actin cytoskeleton
-mf 0 3 voltage-gated calcium channel activity
-mf 3 67 nucleotide binding
