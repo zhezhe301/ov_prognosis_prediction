@@ -49,7 +49,7 @@ The R script *figure2.r* is for figure2. Before this, make sure you have the fol
 
 ### 4.2 
 
-The R script *figure3.r* is for figure3 which shows C-index of all the models. Before this step, you need first run all the scripts from part1 (*1.survival.model*) and part2 (*2.tx.outcome.model*) to create related files. Next, bind them together to create the following files: *survival.5fold.txt*, *survival.icgc.txt*, and *treatment.5fold.txt*. You can bind them manually by yourself. However, we have already uploaded this three files.
+The R script *figure3.r* is for figure3 which shows C-index of all the models. Before this step, we first run all the scripts from part1 (*1.survival.model*) and part2 (*2.tx.outcome.model*) to create related files. Next, bind them together to create the following files: *survival.5fold.txt*, *survival.icgc.txt*, and *treatment.5fold.txt*. You can bind them manually by yourself. However, we have already uploaded this three files we used generating the figures presented in our manuscript.
 In detail,
 
 4.2.1 The file *survival.5fold.txt* is used for figure 3A plotting. After running the scripts from part1 (*1.survival.model*), you will have four files named "mat.100.5fold.csv" and other four files named "mat.100.pca.5fold.csv" (from *1.DNAseq*, *2.RNAseq*, *3.miRNA*, *4.DNAmethy*), bind them together to generate the file *survival.5fold.txt*.
@@ -77,5 +77,5 @@ The circos plot have tutorials on http://circos.ca/documentation/tutorials/. Bef
 
 The files you need to use are already provided in the corresponding folder and remember to change the file path on your local machine. The file *karyotype.dnamethy.txt* defines the axes, these are typically outer ring of BIOLOGICAL_PROCESS (bp), CELLULAR_COMPONENT (cc), MOLECULAR_FUNCTION (mf), and their size. The file *highlight.2level.txt* defines the position and color of parent terms of the significant GO terms (the inner ring), their labels are described by the file *labels.2level.txt*. The file *highlight.3level.txt* defines the position and color of the significant GO terms (the third ring), their labels are described by the file *labels.3level.txt*, and their average fold changes are described by the file *histogram.3level.txt*. The files *links.txt*, *links1.txt*, *links2.txt*, *links3.txt*, and *links4.txt* define the overlapping genes of significant pathways (the bezier curves). 
 
-You can use the files above to generate figure6 directly, or use R scripts *circos.DNAseq.r*, *circos.RNAseq.r*, and *circos.DNAmethy.r* to recreate these files by yourself(the required files saved in folder named *data*).  You may notice that your created files are a little different to our provided files, that is because R package *org.Hs.eg.db* has been updated recently. 
+You can use the files above to generate figure6 directly, or use R scripts *circos.DNAseq.r*, *circos.RNAseq.r*, and *circos.DNAmethy.r* to recreate these files by yourself (the required files saved in folder named *data*).  You may notice that your created files are a little different to our provided files, that is because R package *org.Hs.eg.db* has been updated recently. 
 
