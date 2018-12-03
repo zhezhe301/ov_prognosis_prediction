@@ -9,7 +9,7 @@ Basically, we use R and Python programming language to write these scripts. Requ
 
 ## Getting Started
 
-These instructions will get you how to run on your local machine for development and testing purposes. There are four parts of our codes.
+These instructions will get you how to run on your local machine for development and testing purposes. There are four parts of our codes. We recommend restarting the R before running a single R script to make sure that you have cleared the objects from the workspace.
 
 ## 1. Part1 survival.model
 
