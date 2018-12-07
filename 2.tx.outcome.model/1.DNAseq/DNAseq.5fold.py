@@ -39,7 +39,7 @@ def main():
 			 	X_test = testdata[list(range(2,len(traindata.columns)))]
 			 	feature_columns=learn.infer_real_valued_columns_from_input(X_train)
 			 	dnn_classifier = learn.DNNClassifier(hidden_units=[20, 40, 20], n_classes=5,feature_columns=feature_columns)
-			 	dnn_classifier.fit(X_train, y_train, steps = 2000)
+			 	dnn_classifier.fit(X_train, y_train, steps = 100000)
 			 	dnn_prediction = dnn_classifier.predict(X_test)
 			 	print('DNN Prediction Score: {0}'.format( accuracy_score(dnn_prediction, y_test)))
 			 	print(len(dnn_prediction))
